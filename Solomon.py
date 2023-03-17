@@ -1,13 +1,14 @@
 # Import streamlit library
 import pandas as pd
 import streamlit as st
-import json
-import requests
 import openai
 import os
 
+# Load your API key from an environment variable or secret management service
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 # Set the title of the app
-st.title("Solomon")
+st.title("Data Transformer")
 
 # Create a file uploader widget for file input
 file_input = st.sidebar.file_uploader("Upload a csv file")
@@ -16,19 +17,54 @@ file_input = st.sidebar.file_uploader("Upload a csv file")
 if file_input is not None:
     df = pd.read_csv(file_input)
 
+    md_table = df.head().to_markdown()
+
+    # Create a prompt for the AI model using natural language and code snippets
+    systemprompt = f"""
+                # Python 3
+                This is a dataframe:
+
+                {md_table}
+
+                You are a helpful pair coding assistant that converts Natural Language queries to pandas code regarding transformations on a dataframe.
+                You'll provide responses in the format: [Code] <Done>
+                None of your answers should be in Natural Language.
+
+                For example:
+                User: drop columns A and B
+                You: df.drop([‘A’, ‘B’], axis=1, inplace=True) <Done>
+
+                User: fill missing values with zero
+                You: df.fillna(0) <Done>
+
+                User: group by column E and calculate the mean of column F
+                You: df.groupby(‘E’)[‘F’].mean() <Done>
+
+                You just need to provide a one line response.
+                """
+
     # Display the dataframe in the sidebar using streamlit.sidebar.dataframe()
     st.sidebar.dataframe(df)
 
+else:
+    st.error("Please input a csv file before handling any tasks", icon="🚨")
+
+response = ""
+
 # Create a text input widget for user input
 user_input = st.text_input("How do you want to transform your data?")
+button = st.button("Transform")
 
-# Display the user input
-st.write(f"You entered: {user_input}")
+if user_input != "":
 
+    response = openai.Completion.create(model="code-davinci-002", prompt=systemprompt +"\n\nUser" + user_input, temperature=0, max_tokens=256,stop="<Done>")
 
+    output = response["choices"][0]["text"]
+    pandas_code = output.split(":")[1]
 
-st.code("""
-df = pd.read_csv("data.csv")
-st.dataframe(df)
-""", language="python")
+    # Code display
+    st.subheader("Generated Code")
+    st.code(pandas_code, language="python")
 
+else:
+     st.error("Please describe how you want to transform your data before hitting transform.", icon="🚨")
