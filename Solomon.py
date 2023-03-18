@@ -57,7 +57,11 @@ button = st.button("Transform")
 
 if user_input != "":
 
-    response = openai.Completion.create(model="code-davinci-002", prompt=systemprompt +"\n\nUser" + user_input, temperature=0, max_tokens=256,stop="<Done>")
+    response = openai.Completion.create(model="code-davinci-002", 
+    prompt=systemprompt +"\n\nUser" + user_input, 
+    temperature=0, 
+    max_tokens=256,
+    stop="<Done>")
 
     output = response["choices"][0]["text"]
     pandas_code = output.split(":")[1]
@@ -66,5 +70,26 @@ if user_input != "":
     st.subheader("Generated Code")
     st.code(pandas_code, language="python")
 
+    st.subheader("Your transformed data")
+    transformed = eval(pandas_code)
+
+    st.dataframe(transformed)
+
+    def convert_df(transformed):
+        return transformed.to_csv(index=True).encode('utf-8')
+
+    csv = convert_df(transformed)
+
+    # Display download button
+    st.download_button(
+        label="Press to Download",
+        data=csv,
+        file_name="file.csv",
+        mime="text/csv",
+        key='download-csv'
+    )
+    
 else:
      st.error("Please describe how you want to transform your data before hitting transform.", icon="🚨")
+
+
