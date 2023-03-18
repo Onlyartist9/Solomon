@@ -55,7 +55,7 @@ button = st.button("Transform")
 
 if user_input != "":
 
-    response = openai.Completion.create(model="code-davinci-002", 
+    response = openai.Completion.create(model="code-davinci-002",  #You can change the model here.
     prompt=systemprompt +"\n\nUser" + user_input, 
     temperature=0, 
     max_tokens=256,
