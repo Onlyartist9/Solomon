@@ -8,7 +8,7 @@ import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Set the title of the app
-st.title("Data Transformer")
+st.title("Data Explorer")
 
 # Create a file uploader widget for file input
 file_input = st.sidebar.file_uploader("Upload a csv file")
@@ -40,7 +40,6 @@ if file_input is not None:
                 User: group by column E and calculate the mean of column F
                 You: df.groupby(‘E’)[‘F’].mean() <Done>
 
-                You just need to provide a one line response.
                 """
 
     # Display the dataframe in the sidebar using streamlit.sidebar.dataframe()
@@ -52,7 +51,7 @@ else:
 response = ""
 
 # Create a text input widget for user input
-user_input = st.text_input("How do you want to transform your data?")
+user_input = st.text_input("What do you want to see in your data?")
 button = st.button("Transform")
 
 if user_input != "":
@@ -90,6 +89,6 @@ if user_input != "":
     )
     
 else:
-     st.error("Please describe how you want to transform your data before hitting transform.", icon="🚨")
+     st.error("Please describe your query before hitting transform.", icon="🚨")
 
 
