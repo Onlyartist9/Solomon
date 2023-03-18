@@ -39,7 +39,6 @@ if file_input is not None:
 
                 User: group by column E and calculate the mean of column F
                 You: df.groupby(‘E’)[‘F’].mean() <Done>
-
                 """
 
     # Display the dataframe in the sidebar using streamlit.sidebar.dataframe()
@@ -90,5 +89,3 @@ if user_input != "":
     
 else:
      st.error("Please describe your query before hitting transform.", icon="🚨")
-
-
