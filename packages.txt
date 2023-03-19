@@ -9,3 +9,4 @@ unattended-upgrades
 libdbus-1-dev
 libxslt-dev
 libxml2-dev
+libgirepository1.0-dev
