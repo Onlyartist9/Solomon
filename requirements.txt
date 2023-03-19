@@ -101,4 +101,4 @@ watchdog==2.3.1
 webencodings==0.5.1
 yarl==1.8.2
 zipp==1.0.0
-zope.interface==4.7.1
+zope.interface==5.4.0
