@@ -94,7 +94,6 @@ Twisted==18.9.0
 typing-extensions==4.5.0
 tzdata==2022.7
 tzlocal==4.2
-ufw==0.36
 unattended-upgrades==0.1
 urllib3==1.25.8
 validators==0.20.0
