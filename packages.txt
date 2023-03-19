@@ -3,5 +3,5 @@ cloud-init
 command-not-found
 distro-info
 libcairo2-dev
-libapt-pkg6.0
+libapt-pkg5.0
 python-apt
