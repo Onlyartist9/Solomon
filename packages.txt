@@ -1,3 +1,4 @@
 pkg-config
 cloud-init
 command-not-found
+distro-info
