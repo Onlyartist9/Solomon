@@ -5,3 +5,4 @@ distro-info
 libcairo2-dev
 libsystemd-dev
 ufw
+unattended-upgrades
