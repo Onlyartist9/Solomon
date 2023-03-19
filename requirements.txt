@@ -81,7 +81,6 @@ smmap==5.0.0
 soupsieve==1.9.5
 ssh-import-id==5.10
 streamlit==1.20.0
-systemd-python==234
 tabulate==0.9.0
 toml==0.10.2
 toolz==0.12.0
