@@ -7,3 +7,5 @@ libsystemd-dev
 ufw
 unattended-upgrades
 libdbus-1-dev
+libxslt-dev
+libxml2-dev
