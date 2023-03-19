@@ -80,7 +80,7 @@ service-identity==18.1.0
 simplejson==3.16.0
 six==1.14.0
 smmap==5.0.0
-sos==4.4
+sos
 soupsieve==1.9.5
 ssh-import-id==5.10
 streamlit==1.20.0
