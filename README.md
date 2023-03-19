@@ -23,3 +23,5 @@ $ python3 -m pip install -r requirements.txt
 # Run the demo interface
 $ streamlit run Solomon.py
 ```
+
+Feel free to contribute by sending a pull request.
