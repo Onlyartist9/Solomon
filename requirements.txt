@@ -1,4 +1,3 @@
-pip==23.0.1
 aiohttp==3.8.4
 aiosignal==1.3.1
 altair==4.2.2
@@ -13,7 +12,7 @@ certifi==2019.11.28
 chardet==3.0.4
 charset-normalizer==3.1.0
 Click==7.0
-cloud-init-gen==1.2.0
+cloud-init==22.4.2
 colorama==0.4.3
 command-not-found==0.3
 configobj==5.0.6
