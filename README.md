@@ -24,4 +24,4 @@ $ python3 -m pip install -r requirements.txt
 $ streamlit run Solomon.py
 ```
 
-Feel free to contribute by sending a pull request.
+Feel free to contribute by sending a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
