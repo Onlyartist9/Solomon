@@ -1,5 +1,6 @@
 # Solomon
 A data exploration tool.
+Try it [here](https://onlyartist9-solomon-solomon-lxqfr5.streamlit.app/)
 
 ![Example of how to use Data Explorer](https://github.com/Onlyartist9/Solomon/blob/main/utils/images/Example%20of%20Solomon%20at%20work.png "Data Explorer in action")
 
