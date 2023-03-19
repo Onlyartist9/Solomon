@@ -4,4 +4,4 @@ command-not-found
 distro-info
 libcairo2-dev
 python-apt
-libapt-pkg
+libapt-pkg6.0 2.2.4
