@@ -89,7 +89,6 @@ tqdm==4.65.0
 Twisted==18.9.0
 typing-extensions==4.5.0
 tzdata==2022.7
-tzlocal==4.2
 ubuntu-advantage-tools==8001
 ufw==0.36
 unattended-upgrades==0.1
