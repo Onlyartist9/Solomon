@@ -6,4 +6,4 @@ libcairo2-dev
 libsystemd-dev
 ufw
 unattended-upgrades
-dbus-1
+libdbus-1-dev
