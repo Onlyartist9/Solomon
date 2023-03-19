@@ -2,5 +2,4 @@ pkg-config
 cloud-init
 command-not-found
 distro-info
-libcairo2
-python-cairo
+libcairo2-dev
