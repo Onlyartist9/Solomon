@@ -27,3 +27,6 @@ $ streamlit run Solomon.py
 ```
 
 Feel free to contribute by sending a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
+## Limitations
+Currently the type of tasks the tool works best with are query type tasks, where you ask it to "Display" a certain feature of the dataset. Even then its not always precise. In such cases just reframe your query.
